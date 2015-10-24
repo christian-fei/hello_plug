@@ -7,7 +7,9 @@ defmodule HelloPlug do
     children = [
       worker(HelloPlug.Worker, [])
     ]
-    opts = [strategy: :one_for_one, name: HelloPlug.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link(children, [
+      strategy: :one_for_one,
+      name: HelloPlug.Supervisor
+    ])
   end
 end

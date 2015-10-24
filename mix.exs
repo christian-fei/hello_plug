@@ -18,7 +18,8 @@ defmodule HelloPlug.Mixfile do
   defp deps do
     [
       {:cowboy, "~> 1.0.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:inch_ex, only: :docs}
     ]
   end
 end

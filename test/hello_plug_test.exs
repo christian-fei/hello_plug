@@ -4,11 +4,9 @@ defmodule HelloPlugTest do
 
   alias HelloPlug.Router
 
-  @opts Router.init([])
-
   test "returns hello world" do
     conn = conn(:get, "/")
-    conn = Router.call(conn, @opts)
+           |> Router.call([])
 
     assert conn.state == :sent
     assert conn.status == 200

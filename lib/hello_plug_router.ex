@@ -4,8 +4,11 @@ defmodule HelloPlug.Router do
   if Mix.env == :dev do
     use Plug.Debugger
   end
+  if Mix.env != :test do
+    plug Plug.Logger
+  end
 
-  plug Plug.Logger
+  plug HelloPlug.Plug
   plug :match
   plug :dispatch
 
